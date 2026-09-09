@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/pawelgawron3/odin-inventory-application/issues"
   },
-  "homepage": "https://github.com/pawelgawron3/odin-inventory-application#readme"
+  "homepage": "https://github.com/pawelgawron3/odin-inventory-application#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
