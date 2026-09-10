@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import indexRouter from "./routes/indexRouter.js";
+import categoriesRouter from "./routes/categoriesRouter.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 app.use("/", indexRouter);
+app.use("/categories", categoriesRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
