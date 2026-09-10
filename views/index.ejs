@@ -7,13 +7,29 @@
     <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
   </head>
   <body>
-    <h1>Fetched categories from database with desc:</h1>
+    <header class="header">
+      <div class="logo"></div>
 
-    <ul>
+      <div class="links">
+        <span class="categoriesSpan">Categories</span>
+        <span class="allProductsSpan">All products</span>
+      </div>
+
+      <div class="addProductBtn">
+        <button type="button">+ Add product</button>
+      </div>
+    </header>
+
+    <h1>Categories</h1>
+    <p>Browse inventory by category</p>
+
+    <ul class="categories">
         <% rows.forEach((category) => { %>
-            <li><%= category.name %>
-                <br>
-                <span><%= category.description %></span>
+            <li class="category">
+              <a href="/categories/<%= category.id %>">
+                <h2><%= category.name %></h2>
+                <p><%= category.description %></p>
+              </a>
             </li>
         <% })%> 
     </ul>
