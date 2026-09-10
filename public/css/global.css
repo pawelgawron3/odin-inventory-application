@@ -10,6 +10,8 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   color: var(--color-text);
   background-color: var(--color-bg);
@@ -58,4 +60,20 @@ a {
 
 .addProductBtn button:hover {
   background-color: var(--color-primary-dark);
+}
+
+/* FOOTER */
+
+footer {
+  margin-top: auto;
+  padding: 2rem 1rem;
+  color: var(--color-text-muted);
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
 }
