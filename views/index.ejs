@@ -10,18 +10,7 @@
     <link rel="stylesheet" href="/css/index.css">
   </head>
   <body>
-    <header class="header">
-      <div class="logo"></div>
-
-      <div class="links">
-        <span class="categoriesSpan">Categories</span>
-        <span class="allProductsSpan">All products</span>
-      </div>
-
-      <div class="addProductBtn">
-        <button type="button">+ Add product</button>
-      </div>
-    </header>
+    <%- include("partials/header.ejs") %>
 
     <h1>Categories</h1>
     <p>Browse inventory by category</p>
@@ -36,5 +25,7 @@
             </li>
         <% })%> 
     </ul>
+
+    <%- include("partials/footer.ejs") %>
   </body>
 </html>
