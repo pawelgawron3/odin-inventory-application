@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <h1>Fetched categories from database with desc:</h1>
+    
+    <ul>
+        <% rows.forEach((category) => { %>
+            <li><%= category.name %>
+                <br>
+                <span><%= category.description %></span>
+            </li>
+        <% })%> 
+    </ul>
+  </body>
+</html>
