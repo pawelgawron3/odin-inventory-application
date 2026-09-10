@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import indexRouter from "./routes/indexRouter.js";
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("public"));
+
+app.use("/", indexRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
