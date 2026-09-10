@@ -1,5 +1,4 @@
-#! /usr/bin/env node
-
+import "dotenv/config";
 import { Client } from "pg";
 
 const SQL = `
@@ -58,6 +57,8 @@ async function main() {
     connectionString: `postgresql://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:5432/${process.env.DB_NAME}`,
   });
 
+  await client.connect();
+
   const { rows } = await client.query("SELECT COUNT(*) FROM categories");
   if (Number(rows[0].count) > 0) {
     console.log("Database already seeded.");
@@ -67,7 +68,6 @@ async function main() {
 
   console.log("seeding...");
 
-  await client.connect();
   await client.query(SQL);
   await client.end();
 
