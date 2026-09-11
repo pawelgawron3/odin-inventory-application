@@ -29,7 +29,7 @@ async function getTeasByCategory(categoryId) {
 
 async function getAllProducts() {
   const SQL = `
-    SELECT c.name AS category, t.id, t.name, t.description, t.price, t.stock, o.country, o.region
+    SELECT c.name AS category, t.id, t.name, t.price, t.stock, o.country
     FROM teas AS t JOIN categories AS c ON t.category_id = c.id JOIN origins AS o ON t.origin_id = o.id
   `;
 

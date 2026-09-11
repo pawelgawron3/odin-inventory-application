@@ -24,11 +24,9 @@
               <tr>
                 <th>Category</th>
                 <th>Name</th>
-                <th>Description</th>
                 <th>Price</th>
                 <th>Stock</th>
                 <th>Country</th>
-                <th>Region</th>
               </tr>
             </thead>
 
@@ -39,11 +37,9 @@
                   <td>
                     <a href="/products/<%= tea.id %>"><%= tea.name %></a>
                   </td>
-                  <td><%= tea.description %></td>
                   <td><%= tea.price %>$</td>
                   <td><%= tea.stock %></td>
                   <td><%= tea.country %></td>
-                  <td><%= tea.region %></td>
                 </tr>
               <% }) %>
             </tbody>
