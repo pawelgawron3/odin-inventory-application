@@ -33,6 +33,23 @@ a {
   border-bottom: 1px solid var(--color-border);
 }
 
+.logo a {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.logo-icon {
+  font-size: 1.7rem;
+}
+
+.logo-text {
+  color: var(--color-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
 .links {
   display: flex;
   gap: 2.5rem;
