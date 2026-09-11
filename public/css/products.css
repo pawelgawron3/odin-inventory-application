@@ -92,6 +92,11 @@
 .tea-table td:nth-child(5) {
   font-weight: 600;
   white-space: nowrap;
+  color: var(--color-primary-dark);
+}
+
+.tea-table td a:hover {
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
