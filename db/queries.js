@@ -27,8 +27,19 @@ async function getTeasByCategory(categoryId) {
   return rows;
 }
 
+async function getAllProducts() {
+  const SQL = `
+    SELECT c.name AS category, t.name, t.description, t.price, t.stock, o.country, o.region
+    FROM teas AS t JOIN categories AS c ON t.category_id = c.id JOIN origins AS o ON t.origin_id = o.id
+  `;
+
+  const { rows } = await pool.query(SQL);
+  return rows;
+}
+
 export const db = {
   getCategories,
   getCategory,
   getTeasByCategory,
+  getAllProducts,
 };
