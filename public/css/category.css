@@ -35,7 +35,7 @@
 
 .tea-table {
   width: 100%;
-  min-width: 850px;
+  min-width: 650px;
   border-collapse: collapse;
   text-align: center;
 }
@@ -77,13 +77,14 @@
 }
 
 .tea-table td:nth-child(2) {
-  max-width: 300px;
-  color: var(--color-text-muted);
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .tea-table td:nth-child(3) {
   font-weight: 600;
   white-space: nowrap;
+  color: var(--color-primary-dark);
 }
 
 .tea-table td:nth-child(4) {
@@ -91,8 +92,8 @@
   white-space: nowrap;
 }
 
-.tea-table td:nth-child(4) {
-  color: var(--color-primary-dark);
+.tea-table td a:hover {
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {
