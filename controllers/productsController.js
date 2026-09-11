@@ -6,6 +6,14 @@ const productsController = {
 
     res.render("products", { teas });
   },
+
+  async getProduct(req, res) {
+    const teaId = req.params.id;
+
+    const tea = await db.getProduct(teaId);
+
+    res.render("product", { tea });
+  },
 };
 
 export default productsController;
