@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TeaStock | <%= tea.name %></title>
+    <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/product.css" />
+  </head>
+
+  <body>
+    <%- include("partials/header.ejs") %>
+
+    <main class="product-page">
+      <div class="product-header">
+        <p><%= tea.category %></p>
+        <h2><%= tea.name %></h2>
+        <p><%= tea.description %></p>
+      </div>
+
+      <div class="product-details">
+        <div>
+          <span>Price</span>
+          <strong><%= tea.price %>$</strong>
+        </div>
+
+        <div>
+          <span>Stock</span>
+          <strong><%= tea.stock %></strong>
+        </div>
+
+        <div>
+          <span>Country</span>
+          <strong><%= tea.country %></strong>
+        </div>
+
+        <div>
+          <span>Region</span>
+          <strong><%= tea.region %></strong>
+        </div>
+      </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
+  </body>
+</html>
