@@ -34,7 +34,9 @@
             <tbody>
               <% teas.forEach((tea) => { %>
                 <tr>
-                  <td><%= tea.name %></td>
+                  <td>
+                  <a href="/products/<%= tea.id %>"><%= tea.name %></a>
+                  </td>
                   <td><%= tea.description %></td>
                   <td><%= tea.price %>$</td>
                   <td><%= tea.stock %></td>
