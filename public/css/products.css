@@ -3,9 +3,11 @@
   margin: 0 auto;
   padding: 4rem 0 5rem;
 }
+
 .products-header {
   margin-bottom: 2.5rem;
 }
+
 .products-header h2 {
   margin: 0 0 0.75rem;
   color: var(--color-text);
@@ -13,6 +15,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
 }
+
 .products-header p {
   max-width: 700px;
   margin: 0;
@@ -20,6 +23,7 @@
   font-size: 1rem;
   line-height: 1.7;
 }
+
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -28,12 +32,14 @@
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(38, 49, 40, 0.04);
 }
+
 .tea-table {
   width: 100%;
   min-width: 950px;
   border-collapse: collapse;
   text-align: left;
 }
+
 .tea-table th {
   padding: 1rem 1.25rem;
   color: var(--color-text-muted);
@@ -44,6 +50,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
+
 .tea-table td {
   padding: 1.1rem 1.25rem;
   border-bottom: 1px solid var(--color-border);
@@ -51,38 +58,47 @@
   line-height: 1.5;
   vertical-align: middle;
 }
+
 .tea-table tbody tr:last-child td {
   border-bottom: 0;
 }
+
 .tea-table tbody tr {
   transition: background-color 0.15s ease;
 }
+
 .tea-table tbody tr:hover {
   background-color: #fafbf7;
-} /* Category & tea name */
+}
+
 .tea-table th:first-child,
 .tea-table td:first-child,
 .tea-table th:nth-child(2),
 .tea-table td:nth-child(2) {
   font-weight: 600;
-} /* Description */
+}
+
 .tea-table td:nth-child(3) {
   max-width: 300px;
   color: var(--color-text-muted);
-} /* Price */
+}
+
 .tea-table td:nth-child(4) {
   font-weight: 600;
   white-space: nowrap;
-} /* Stock */
+}
+
 .tea-table td:nth-child(5) {
   font-weight: 600;
   white-space: nowrap;
   color: var(--color-primary-dark);
-} /* Price, stock, country and region */
+}
+
 .tea-table th:nth-child(n + 4),
 .tea-table td:nth-child(n + 4) {
   text-align: center;
 }
+
 @media (max-width: 768px) {
   .products-page {
     width: min(100% - 2rem, 1200px);
