@@ -7,12 +7,8 @@
   </div>
 
   <div class="links">
-    <span class="categoriesSpan">
-      <a href="/">Categories</a>
-    </span>
-    <span class="allProductsSpan">
-      <a href="/products">All products</a>
-    </span>
+    <a href="/" class="nav-link <%= currentPath === "/" || currentPath.startsWith("/categories") ? "active" : "" %>">Categories</a>
+    <a href="/products" class="nav-link <%= currentPath.startsWith("/products") ? "active" : "" %>">All products</a>
   </div>
 
   <div class="addProductBtn">
