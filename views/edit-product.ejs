@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeaStock | Edit Product</title>
+    <title>TeaStock | Edit Tea</title>
     <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/global.css" />
@@ -13,7 +13,7 @@
     <%- include("partials/header.ejs") %>
 
     <main class="new-product-page">
-        <h1>Edit a product</h1>
+        <h1>Edit tea</h1>
 
         <form method="POST" action="/products/<%= tea.id %>/edit">
             <label for="name">Tea name:</label>
@@ -22,7 +22,7 @@
             <label for="description">Description:</label>
             <textarea name="description" id="description" rows="4"><%= tea.description %></textarea>
 
-            <label for="price">Price: (in $)</label>
+            <label for="price">Price: <span class="greyedOut">(in $)</span></label>
             <input type="number" name="price" id="price" min="0" step="0.01" value="<%= tea.price %>" required>
 
             <label for="stock">Stock:</label>

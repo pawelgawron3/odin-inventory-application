@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeaStock | All products</title>
+    <title>TeaStock | Teas</title>
     <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/global.css" />
@@ -12,40 +12,38 @@
   <body>
     <%- include("partials/header.ejs") %>
 
-      <main class="products-page">
-        <div class="products-header">
-          <h2>List of all products</h2>
-          <p>Browse the products from TeaStock.</p>
-        </div>
-
-        <div class="table-wrapper">
-          <table class="tea-table">
-            <thead>
+    <main class="products-page">
+      <div class="products-header">
+        <h2>List of all teas</h2>
+        <p>Browse the teas from TeaStock.</p>
+      </div>
+      <div class="table-wrapper">
+        <table class="tea-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% teas.forEach((tea) => { %>
               <tr>
-                <th>Category</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Stock</th>
-                <th>Country</th>
+                <td><%= tea.category %></td>
+                <td>
+                  <a href="/products/<%= tea.id %>"><%= tea.name %></a>
+                </td>
+                <td><%= tea.price %>$</td>
+                <td><%= tea.stock %></td>
+                <td><%= tea.country %></td>
               </tr>
-            </thead>
-
-            <tbody>
-              <% teas.forEach((tea) => { %>
-                <tr>
-                  <td><%= tea.category %></td>
-                  <td>
-                    <a href="/products/<%= tea.id %>"><%= tea.name %></a>
-                  </td>
-                  <td><%= tea.price %>$</td>
-                  <td><%= tea.stock %></td>
-                  <td><%= tea.country %></td>
-                </tr>
-              <% }) %>
-            </tbody>
-          </table>
-        </div>
-      </main>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </main>
 
     <%- include("partials/footer.ejs") %>
   </body>

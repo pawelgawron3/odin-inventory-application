@@ -30,6 +30,11 @@
   font-weight: 600;
 }
 
+.greyedOut {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
 .new-product-page label:first-of-type {
   margin-top: 0;
 }
