@@ -2,7 +2,7 @@ import { db } from "../db/queries.js";
 
 const productsController = {
   async getProducts(req, res) {
-    const teas = await db.getAllProducts();
+    const teas = await db.getAllTeas();
 
     res.render("products", { teas });
   },
@@ -10,7 +10,7 @@ const productsController = {
   async getProduct(req, res) {
     const teaId = req.params.id;
 
-    const tea = await db.getProduct(teaId);
+    const tea = await db.getTea(teaId);
 
     res.render("product", { tea });
   },
@@ -23,18 +23,17 @@ const productsController = {
   },
 
   async createProduct(req, res) {
-    const { name, description, price, stock, category_id, origin_id } =
-      req.body;
+    const tea = req.body;
 
-    await db.createTea(name, description, price, stock, category_id, origin_id);
+    await db.createTea(tea);
 
     res.redirect("/products");
   },
 
   async getEditProduct(req, res) {
-    const productId = req.params.id;
+    const teaId = req.params.id;
 
-    const tea = await db.getProduct(productId);
+    const tea = await db.getTea(teaId);
     const categories = await db.getCategories();
     const origins = await db.getOrigins();
 
@@ -42,27 +41,18 @@ const productsController = {
   },
 
   async updateProduct(req, res) {
-    const { name, description, price, stock, category_id, origin_id } =
-      req.body;
-    const productId = req.params.id;
+    const tea = { id: req.params.id, ...req.body };
 
-    await db.editProduct(
-      productId,
-      name,
-      description,
-      price,
-      stock,
-      category_id,
-      origin_id,
-    );
+    await db.editTea(tea);
 
     res.redirect("/products");
   },
 
   async deleteProduct(req, res) {
-    const productId = req.params.id;
+    const teaId = req.params.id;
 
-    await db.deleteProduct(productId);
+    await db.deleteTea(teaId);
+
     res.redirect("/products");
   },
 };
