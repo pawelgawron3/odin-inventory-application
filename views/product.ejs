@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/global.css" />
     <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css"
+/>
   </head>
 
   <body>
@@ -43,10 +45,10 @@
       </div>
 
       <div class="actionDiv">
-        <a href="/products/<%= tea.id %>/edit" class="updateProduct">Edit product</a>
+        <a href="/products/<%= tea.id %>/edit" class="updateProduct"><i class="mdi mdi-pencil"></i> Edit product</a>
         <form method="POST" action="/products/<%= tea.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this product?');">
           <button type="submit" class="deleteProduct">
-            Delete product
+            <i class="mdi mdi-delete"></i> Delete product
           </button>
         </form>
       </div>
