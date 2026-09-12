@@ -1,5 +1,10 @@
 import pool from "./pool.js";
 
+async function getOrigins() {
+  const { rows } = await pool.query("SELECT * FROM origins");
+  return rows;
+}
+
 async function getCategories() {
   const { rows } = await pool.query("SELECT * FROM categories");
   return rows;
@@ -49,10 +54,35 @@ async function getProduct(productId) {
   return rows[0];
 }
 
+async function createTea(
+  name,
+  description,
+  price,
+  stock,
+  category_id,
+  origin_id,
+) {
+  const SQL = `
+    INSERT INTO teas (name, description, price, stock, category_id, origin_id)
+    VALUES ($1, $2, $3, $4, $5, $6)
+  `;
+
+  await pool.query(SQL, [
+    name,
+    description,
+    price,
+    stock,
+    category_id,
+    origin_id,
+  ]);
+}
+
 export const db = {
+  getOrigins,
   getCategories,
   getCategory,
   getTeasByCategory,
   getAllProducts,
   getProduct,
+  createTea,
 };
