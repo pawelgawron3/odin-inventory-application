@@ -14,6 +14,22 @@ const productsController = {
 
     res.render("product", { tea });
   },
+
+  async getNewProductForm(req, res) {
+    const categories = await db.getCategories();
+    const origins = await db.getOrigins();
+
+    res.render("new-product", { categories, origins });
+  },
+
+  async createProduct(req, res) {
+    const { name, description, price, stock, category_id, origin_id } =
+      req.body;
+
+    await db.createTea(name, description, price, stock, category_id, origin_id);
+
+    res.redirect("/products");
+  },
 };
 
 export default productsController;
