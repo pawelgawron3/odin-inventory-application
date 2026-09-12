@@ -44,7 +44,7 @@ async function getAllProducts() {
 
 async function getProduct(productId) {
   const SQL = `
-    SELECT t.id, t.name, t.description, t.price, t.stock, c.name AS category, o.country, o.region
+    SELECT t.id, t.name, t.description, t.price, t.stock, t.category_id, t.origin_id, c.name AS category, o.country, o.region
     FROM teas AS t JOIN categories AS c ON t.category_id = c.id JOIN origins AS o ON t.origin_id = o.id
     WHERE t.id = $1
   `;
@@ -77,6 +77,32 @@ async function createTea(
   ]);
 }
 
+async function editProduct(
+  productId,
+  name,
+  description,
+  price,
+  stock,
+  category_id,
+  origin_id,
+) {
+  const SQL = `
+    UPDATE teas
+    SET name = $2, description = $3, price = $4, stock = $5, category_id = $6, origin_id = $7
+    WHERE id = $1
+  `;
+
+  await pool.query(SQL, [
+    productId,
+    name,
+    description,
+    price,
+    stock,
+    category_id,
+    origin_id,
+  ]);
+}
+
 export const db = {
   getOrigins,
   getCategories,
@@ -85,4 +111,5 @@ export const db = {
   getAllProducts,
   getProduct,
   createTea,
+  editProduct,
 };
