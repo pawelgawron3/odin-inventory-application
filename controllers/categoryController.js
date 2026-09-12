@@ -1,7 +1,7 @@
 import { db } from "../db/queries.js";
 
-const categoriesController = {
-  async getCategoryWithProducts(req, res) {
+const categoryController = {
+  async getProductsForCategory(req, res) {
     const categoryId = req.params.id;
 
     const category = await db.getCategory(categoryId);
@@ -11,4 +11,4 @@ const categoriesController = {
   },
 };
 
-export default categoriesController;
+export default categoryController;
