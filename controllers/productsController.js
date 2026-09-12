@@ -30,6 +30,34 @@ const productsController = {
 
     res.redirect("/products");
   },
+
+  async getEditProduct(req, res) {
+    const productId = req.params.id;
+
+    const tea = await db.getProduct(productId);
+    const categories = await db.getCategories();
+    const origins = await db.getOrigins();
+
+    res.render("edit-product", { tea, categories, origins });
+  },
+
+  async updateProduct(req, res) {
+    const { name, description, price, stock, category_id, origin_id } =
+      req.body;
+    const productId = req.params.id;
+
+    await db.editProduct(
+      productId,
+      name,
+      description,
+      price,
+      stock,
+      category_id,
+      origin_id,
+    );
+
+    res.redirect("/products");
+  },
 };
 
 export default productsController;
