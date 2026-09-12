@@ -58,6 +58,13 @@ const productsController = {
 
     res.redirect("/products");
   },
+
+  async deleteProduct(req, res) {
+    const productId = req.params.id;
+
+    await db.deleteProduct(productId);
+    res.redirect("/products");
+  },
 };
 
 export default productsController;

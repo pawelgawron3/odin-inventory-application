@@ -103,6 +103,15 @@ async function editProduct(
   ]);
 }
 
+async function deleteProduct(productId) {
+  const SQL = `
+    DELETE FROM teas
+    WHERE id = $1
+  `;
+
+  await pool.query(SQL, [productId]);
+}
+
 export const db = {
   getOrigins,
   getCategories,
@@ -112,4 +121,5 @@ export const db = {
   getProduct,
   createTea,
   editProduct,
+  deleteProduct,
 };
