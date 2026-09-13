@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeaStock | New Origin</title>
+    <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/new-origin.css" />
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <main class="new-origin-page">
+        <h1>Add new origin</h1>
+
+        <% if (error) { %>
+            <p class="form-error"><%= error %></p>
+        <% } %>
+
+        <form method="POST" action="/origins/new">
+            <label for="country">Country name:</label>
+            <input type="text" name="country" id="country" required placeholder="Spain" value="<%= origin?.country ?? '' %>">
+
+            <label for="region">Region: <span class="greyedOut">(Optional)</span></label>
+            <input type="text" name="region" id="region" placeholder="Andalusia" value="<%= origin?.region ?? '' %>">
+
+            <button type="submit">Add origin</button>
+        </form>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
