@@ -3,6 +3,7 @@ import express from "express";
 import homeRouter from "./routes/homeRouter.js";
 import categoryRouter from "./routes/categoryRouter.js";
 import productsRouter from "./routes/productsRouter.js";
+import originRouter from "./routes/originRouter.js";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static("public"));
 app.use("/", homeRouter);
 app.use("/categories", categoryRouter);
 app.use("/products", productsRouter);
+app.use("/origins", originRouter);
 
 app.listen(PORT, (err) => {
   if (err) throw err;
