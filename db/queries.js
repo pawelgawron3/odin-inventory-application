@@ -23,6 +23,15 @@ async function getOrigins() {
   return rows;
 }
 
+async function createOrigin(origin) {
+  const SQL = `
+    INSERT INTO origins (country, region)
+    VALUES ($1, $2)
+  `;
+
+  await pool.query(SQL, [origin.country, origin.region]);
+}
+
 // Teas
 async function getAllTeas() {
   const SQL = `
@@ -99,6 +108,7 @@ export const db = {
   getCategories,
   getCategory,
   getOrigins,
+  createOrigin,
   getAllTeas,
   getTeasByCategory,
   getTea,
