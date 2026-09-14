@@ -67,6 +67,30 @@
   cursor: pointer;
 }
 
+.origin-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
+.add-origin-link {
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.origin-wrapper:focus-within .add-origin-link {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
 .new-product-page button {
   align-self: flex-start;
   margin-top: 1.25rem;
