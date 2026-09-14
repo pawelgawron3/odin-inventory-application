@@ -24,6 +24,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .header {
   min-height: 72px;
   padding: 1rem 3rem;
