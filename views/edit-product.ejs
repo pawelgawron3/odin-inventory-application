@@ -37,14 +37,23 @@
                 <% }) %>
             </select>
 
-            <label for="origin">Choose a tea origin:</label>
-            <select name="origin_id" id="origin" required>
-                <option value="">--Please choose a tea origin--</option>
+            <div class="origin-wrapper">
+                <div class="origin-label">
+                    <label for="origin">Choose a tea origin:</label>
 
-                <% origins.forEach((origin) => { %>
-                    <option value="<%= origin.id %>" <%= origin.id === tea.origin_id ? "selected" : ""%>><%= origin.country %> - <%= origin.region %></option>
-                <% }) %>
-            </select>
+                    <a href="/origins/new" class="add-origin-link">
+                        + Add new origin
+                    </a>
+                </div>
+
+                <select name="origin_id" id="origin" required>
+                    <option value="">--Please choose a tea origin--</option>
+    
+                    <% origins.forEach((origin) => { %>
+                        <option value="<%= origin.id %>" <%= origin.id === tea.origin_id ? "selected" : ""%>><%= origin.country %> - <%= origin.region %></option>
+                    <% }) %>
+                </select>
+            </div>
 
             <button type="submit">Update product</button>
         </form>
