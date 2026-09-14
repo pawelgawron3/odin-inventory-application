@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeaStock | Origins</title>
+    <link rel="shortcut icon" href="/top_favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/origins.css">
+</head>
+<body>
+    <%- include("partials/header.ejs") %>
+
+    <main class="origins-page">
+        <div class="origins-header"> 
+            <div> 
+                <h1>Tea origins</h1> 
+                <p>Manage the origins available for your teas.</p> 
+            </div>
+
+            <a href="/origins/new" class="button">Add new origin</a> 
+        </div>
+
+        <% if (error) { %> 
+            <p class="form-error"><%= error %></p>
+         <% } %>
+         
+         <div class="table-wrapper">
+            <table class="origins-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Region</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% origins.forEach((origin) => { %>
+                        <tr>
+                            <td><%= origin.country %></td>
+                            <td><%= origin.region || "---" %></td> 
+                            <td>
+                                <form method="POST" action="/origins/<%= origin.id %>/delete" onsubmit="return confirm('Are you sure you want to delete this origin?');" >
+                                    <button type="submit" class="delete-button"> 
+                                        Delete 
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <%- include("partials/footer.ejs") %>
+</body>
+</html>
