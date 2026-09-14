@@ -91,15 +91,6 @@
   background-color: #fff0f0;
 }
 
-.form-error {
-  margin-bottom: 1.5rem;
-  padding: 0.75rem 1rem;
-  border: 1px solid #e0b4b4;
-  border-radius: 6px;
-  background-color: #fff5f5;
-  color: #a33a3a;
-}
-
 @media (max-width: 600px) {
   .origins-header {
     align-items: flex-start;

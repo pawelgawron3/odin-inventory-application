@@ -6,6 +6,7 @@
   --color-text: #263128;
   --color-text-muted: #6b756c;
   --color-border: #dce3da;
+  --color-danger: #a33a3a;
 }
 
 body {
@@ -98,6 +99,20 @@ a {
 
 .addProduct:hover {
   background-color: var(--color-primary-dark);
+}
+
+.greyedOut {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.form-error {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0b4b4;
+  border-radius: 6px;
+  background-color: #fff5f5;
+  color: var(--color-danger);
 }
 
 /* FOOTER */
