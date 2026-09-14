@@ -26,6 +26,10 @@ app.use("/categories", categoryRouter);
 app.use("/products", productsRouter);
 app.use("/origins", originRouter);
 
+app.use((req, res) => {
+  res.status(404).render("404");
+});
+
 app.listen(PORT, (err) => {
   if (err) throw err;
 
