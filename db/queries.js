@@ -32,6 +32,10 @@ async function createOrigin(origin) {
   await pool.query(SQL, [origin.country, origin.region]);
 }
 
+async function deleteOrigin(originId) {
+  await pool.query("DELETE FROM origins WHERE id = $1", [originId]);
+}
+
 // Teas
 async function getAllTeas() {
   const SQL = `
@@ -109,6 +113,7 @@ export const db = {
   getCategory,
   getOrigins,
   createOrigin,
+  deleteOrigin,
   getAllTeas,
   getTeasByCategory,
   getTea,
