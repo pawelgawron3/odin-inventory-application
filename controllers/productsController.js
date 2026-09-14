@@ -11,6 +11,9 @@ const productsController = {
     const teaId = req.params.id;
 
     const tea = await db.getTea(teaId);
+    if (!tea) {
+      return res.status(404).render("404");
+    }
 
     res.render("product", { tea });
   },
@@ -34,6 +37,9 @@ const productsController = {
     const teaId = req.params.id;
 
     const tea = await db.getTea(teaId);
+    if (!tea) {
+      return res.status(404).render("404");
+    }
     const categories = await db.getCategories();
     const origins = await db.getOrigins();
 
