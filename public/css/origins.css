@@ -1,0 +1,118 @@
+.origins-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.origins-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.origins-header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.origins-header p {
+  color: var(--color-text-muted);
+}
+
+.origins-header .button {
+  flex-shrink: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.origins-header .button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.origins-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+}
+
+.origins-table th,
+.origins-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.origins-table th {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.origins-table td {
+  color: var(--color-text);
+}
+
+.origins-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.origins-table tbody tr:hover {
+  background-color: var(--color-bg);
+}
+
+.origins-table form {
+  margin: 0;
+}
+
+.delete-button {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d8a5a5;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #a33a3a;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #fff0f0;
+}
+
+.form-error {
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0b4b4;
+  border-radius: 6px;
+  background-color: #fff5f5;
+  color: #a33a3a;
+}
+
+@media (max-width: 600px) {
+  .origins-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .origins-header .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .origins-table th,
+  .origins-table td {
+    padding: 0.75rem;
+  }
+}
